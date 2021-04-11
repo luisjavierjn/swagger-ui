@@ -23,7 +23,7 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Employee Profile API")
-                .description("this API can be used to get profile level actions and information for an empoyee")
+                .description("This API can be used to get profile level actions and information for an empoyee")
                 .version("V1.0")
                 .build();
     }

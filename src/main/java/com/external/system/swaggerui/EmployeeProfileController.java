@@ -35,13 +35,13 @@ public class EmployeeProfileController {
     public List<Employee> fetchAllEmployees() { return employees; }
 
     @ApiOperation(value = "Fetch Employee by Name", response = Employee.class)
-    @GetMapping(value = "/fetch/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/fetch/n/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Employee fetchEmployeeByName(@ApiParam(value = "Employee Name") @PathVariable(value = "name") String name) {
         return employees.stream().filter(x -> x.getName().equalsIgnoreCase(name)).findFirst().get();
     }
 
     @ApiOperation(value = "Get Employee by Department", response = Employee.class)
-    @GetMapping(value = "/fetch/{department}")
+    @GetMapping(value = "/fetch/d/{department}")
     public List<Employee> fetchEmployeeByDepartment(@ApiParam(value = "Department Name", required = true) @PathVariable(value = "department") String department) {
         return employees.stream().filter(x -> x.getDepartment().equalsIgnoreCase(department)).collect(Collectors.toList());
     }
